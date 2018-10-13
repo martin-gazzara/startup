@@ -1,20 +1,5 @@
-#body-container{width:1000px;position:relative;margin:auto; background: #007700;color: #CCCC00;font-family: Georgia, 'Times New Roman', Times, serif}
+#body-container{width:1000px;position:relative;margin:auto; background:#007700;color: #CCCC00;font-family: Georgia, 'Times New Roman', Times, serif;text-align: center}
 
-#header-container{text-align: center;margin-bottom:5px;border-bottom: 2px solid #CCCC00}
+#about-container,#video-container,#audio-container{border-top:2px solid #CCCC00;margin-bottom: 10px}
 
-#about-container{width:500px;position: absolute;border-right:3px solid #CCCC00}
-
-#video-container{width: 500px;position:absolute;left:600px}
-
-#audio-container{width:1000px;position:absolute;top:520px;margin-top:5px;border-top: 2px solid #CCCC00;text-align: center}
-
-/*
-#section-container div{border-top: 2px solid #CCCC00;padding:20px}
-
-#about-container img{float:left}
-
-#article-container {width:500px;float:right}
-
-#section-container p{text-align: justify}
-*/
 

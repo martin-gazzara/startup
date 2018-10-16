@@ -3,6 +3,11 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+body{
+  background-color: #000000;  
+  color: #ffffff;
+}
+
 ul{
   list-style: none;
 }
@@ -37,4 +42,35 @@ footer{
 
 header, footer{
   text-align: center;
+}
+
+
+/*----------classes------------*/
+
+.header{
+  font-size: 46px;
+}
+
+.footer{
+  font-size:10px;
+}
+
+.content{
+  font-size:14px;
+}
+
+.navigation{
+  font-size: 12px;
+}
+
+.sidebar{
+  font-size:10px;
+}
+
+*[class$="r"]{
+  background-color: #E5097F;
+}
+
+*[class*="a"]:not(*[class$="r"]){
+  background: #0000FF;
 }

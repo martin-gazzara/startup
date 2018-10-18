@@ -1,0 +1,51 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 720px){
+
+  #nav-container{margin-left:none;font-size:70%}  
+  #body-container{width:720px;font-size: 200%}
+}
+
+@media (min-width: 720px){
+
+  #nav-container ul{list-style: none;margin-left: 70px;}
+
+}
+
+html{background-color: #a74389;}
+
+#body-container{
+
+  background-color: #7a3064;
+  color:#ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 800px;
+  margin:0px auto;
+  padding: 40px;
+}
+
+#header-container{font-size: 25px;}
+
+#nav-container li{display: inline; margin:0px 50px;}
+
+#section-container img{
+    float:right;
+}
+
+#show-this p{
+  font-size:25px;
+}
+
+.hidden-section{
+
+  opacity: 0;
+}
+
+.show-section{
+  opacity: 1;
+  transition: all 3s ease-in-out;
+}

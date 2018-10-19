@@ -1,0 +1,5 @@
+#body-container{width:1000px;position:relative;margin:auto; background:#007700;color: #CCCC00;font-family: Georgia, 'Times New Roman', Times, serif;text-align: center}
+
+#about-container,#video-container,#audio-container{border-top:2px solid #CCCC00;margin-bottom: 10px}
+
+

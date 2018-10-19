@@ -1,0 +1,10 @@
+Question: How could you add weight to the global font definition to win over the classes added by point 3?
+
+Answer: I might put an ID in each element. Also I tried to putting the universal selector * with the attribute selector [class], 
+and this has worked, though I don't know if that is a good coding.
+
+Question: Imagine there is a declaration like class=”oh-no-inline-styles” style=”background:red” and you need 
+to change the background to green without changing the inline style. How could you accomplish this?
+
+Answer: If you want to change the background-color without modify the inline style, you may put the statement !important
+ in the background propierty, from the css file. But it is considered as a bad coding.

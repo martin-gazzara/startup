@@ -1,3 +1,5 @@
+/*
+
 function tellMeAJoke(){
   
     fetch("http://api.icndb.com/jokes/random")
@@ -15,5 +17,32 @@ function tellMeAJoke(){
   
 }
 
+*/
+
+function getInfo(config){
+    const xhr = new XMLHttpRequest();
+    
+    xhr.open(config.mode,config.url,true);
+    xhr.send();
+    
+    return new Promise((resolve,rejected) => 
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                resolve(this.responseText);
+            }else if(this.status == 404){
+                rejected("error");
+            }
+        }
+    );
+}
+
+
+var config = new Object();
+
+config.mode = "get";
+config.url = "http://api.icndb.com/jokes/random";
+
+getInfo(config).then(resolve => console.log(resolve))
+                .catch(error => console.log(error));
 
 

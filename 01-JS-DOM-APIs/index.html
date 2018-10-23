@@ -11,24 +11,26 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="scripts/topic1.js"></script>
-
 </head>
 <body id="body-container">
     <!--HEADER-->
-    <header id="header-container"><h1>About Chuck Norris</h1></header>
+    <header id="header-container"><h1>Searching repositories</h1></header>
 
     <!--SECTION-->
     <section id="section-container">
-      
-      <img src="images/chuck.jpg" alt="God" width="200"><br>
-      <button onclick="tellMeAJoke()">Tell me a joke</button>
-     
-      <!--Here will be the jokes-->
-      <div id="jokes">
-      </div>
+        <form>
+            <input type="text" id="keyword" placeholder="Insert something to search..." size="45">               
+        </form>
+        <button id="search-button">Search</button>
+         
+        
     </section>
-    <script src="scripts/topic1.js"></script>
+    <aside id="aside-container">
+        <h2>Results:</h2>
+        <div id="results"></div>
+
+    </aside>
+    <script src="scripts/search.js"></script>
    
 </body>
 </html>

@@ -14,23 +14,19 @@
 </head>
 <body id="body-container">
     <!--HEADER-->
-    <header id="header-container"><h1>Searching repositories</h1></header>
+    <header id="header-container">
+        <h1>Matrix</h1>
+        <p>Click the button to generate a matrix (the values are in matrix.js and you can change their from there) </p>
+    </header>
 
     <!--SECTION-->
     <section id="section-container">
-        <form>
-            <input type="text" id="keyword" placeholder="Insert something to search..." size="45">               
-        </form>
-        <button id="search-button">Search</button>
-         
-        
+        <button id="button">Generate</button>
+        <!--In this div, will be generated the matrix-->
+        <div id="matrix">
+        </div>
     </section>
-    <aside id="aside-container">
-        <h2>Results:</h2>
-        <div id="results"></div>
-
-    </aside>
-    <script src="scripts/search.js"></script>
+    <script src="scripts/matrix.js"></script>
    
 </body>
 </html>

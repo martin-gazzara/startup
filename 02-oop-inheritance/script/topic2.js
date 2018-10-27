@@ -1,3 +1,5 @@
+/* Classes */
+
 class EventEmitter{
 
     constructor(){
@@ -28,6 +30,8 @@ class EventEmitter{
     
 }
 
+//------------------------------------------------------
+
 class Movie extends EventEmitter {
 
     constructor(title, year, duration){
@@ -35,6 +39,7 @@ class Movie extends EventEmitter {
         this.title = title;
         this.year = year;
         this.duration = duration;
+        this.cast = [];
     }
 
     play(){
@@ -48,12 +53,38 @@ class Movie extends EventEmitter {
     resume(){
         super.emit("resumed");
     }
+
+    addCast(...actors){
+        
+        for (let i=0; i<actors.length; i++){
+            if (actors[i].length>1){
+                for(let j=0; j<actors[i].length; j++){
+                    this.cast.push(actors[i][j]);
+                }
+            }else{
+                this.cast.push(actors[i]);
+            }
+        }
+    }
 }
+
+//------------------------------------------------------
 
 class Actor{
     constructor(name, age){
         this.name = name;
         this.age = age;
+    }
+}
+
+//------------------------------------------------------
+
+class Logger{
+
+    constructor(){}
+
+    log(info){
+        console.log(`The '${info}' has been emited`);
     }
 }
 
@@ -76,3 +107,24 @@ LordRing.on("resumed", () => console.log("You have resumed the movie"));
 troy.play();
 troy.pause();
 troy.resume();
+
+/* Adding cast */
+
+const orlando = new Actor("Orlando Bloom",41);
+const brad = new Actor("Brad Pitt",54);
+const diane = new Actor("Diane Kruger",42);
+const actors = [
+    new Actor("Eric Bana",50),
+    new Actor("Sean Bean",59),
+    new Actor("Brian Cox",72)
+];  
+
+troy.addCast(orlando,diane,actors);
+
+/* Using the logger */
+
+var logger = new Logger();
+
+troy.on("playing", () => logger.log("play"));
+
+troy.play();

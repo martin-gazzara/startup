@@ -128,3 +128,19 @@ var logger = new Logger();
 troy.on("playing", () => logger.log("play"));
 
 troy.play();
+
+/* Mixin */
+
+const m = {
+    share: function(name){
+        console.log(`${name} share ${this.title}`);
+    },
+    like: function(name){
+        console.log(`${name} likes ${this.title}`)
+    }
+}
+
+Object.assign(troy,m);
+
+troy.share("Martin Gazzara");
+troy.like("Pepe Gomez");

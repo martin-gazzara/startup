@@ -1,17 +1,26 @@
 body{
+    position: relative;
     width: 1000px;
     margin: auto;
-    background-color: #2a8f37;
+    background-color: #79456c;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:#ffffff;
 }
 
-textarea{
-    border-radius:10px;
-    padding:5px;
+#dropzone{
+    position:absolute;
+    left:350px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;  
 }
 
-button{
-    border-radius:5px;
+#clear-button{
+    position:absolute;
+    left:470px;
+    top: 410px;
 }

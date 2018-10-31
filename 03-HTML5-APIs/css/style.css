@@ -1,0 +1,39 @@
+#header-container{
+    text-align: center;
+}
+
+svg{
+    display: block;
+    margin:auto;
+    border: 1px solid #ccc;
+}
+
+    #frontface{
+        fill: #e71616;
+        
+    }
+
+    #upperface{
+        fill: #e0f808;
+
+    }
+
+    #sideface{
+        fill: #1cb10e;
+    }
+
+#star{
+    fill: #630eec;
+}
+
+#circle1{
+    fill: rgba(255, 0, 0, 0.5);
+}
+
+#circle2{
+    fill:rgba(0, 255, 0, 0.5);
+}
+
+#circle3{
+    fill:rgba(0, 0, 255, 0.5);
+}

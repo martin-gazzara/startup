@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="header-section">
-        <h1>Drag and drop</h1>
-        <p>Try to drop a text file. You can erase the text doing a click in the button below.</p>
+    <header id="header-container">
+        <h1>Chat with yourself</h1>
     </header>
     <section id="section-container">
-        <form id="form">
-            <textarea name="textarea" id="dropzone" cols="30" rows="10" placeholder="Drag a text file here"></textarea>
-            
-        </form>
-        <button id="clear-button">Clear</button>
-        <script src="scripts/exercise2.js"></script>
+
+        <!--GUI-->
+
+        <!--History-->
+        <h3>Messages history. Status: <span id="status">Offline</span></h3>
+
+        <div id="chat">
+
+        </div>
+
+        
+        <div id="buttons">
+            <input type="text" name="message" id="message" placeholder="Write your message...">
+            <button id="connect">Connect</button>
+            <button id="send-button">Send</button>
+        </div>
+
+        <img id="meme" src="images/foreveralone.png" alt="You." width="200">
+        <script src="scripts/exercise3.js"></script>
     </section>
 </body>
 </html>

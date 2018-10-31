@@ -1,26 +1,71 @@
 body{
     position: relative;
-    width: 1000px;
-    margin: auto;
-    background-color: #79456c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#header-container{
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:#ffffff;
 }
 
-#dropzone{
-    position:absolute;
-    left:350px;
+#section-container{
+    width: 1000px;
+    position: absolute;
+    left:560px;
+    
+}
+
+#buttons{
+    position:fixed;
+    bottom:0px;
+    left:500px;
+}
+
+    #message{
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+    }
+
+    #connect{
+        position: absolute;
+        bottom: 10px;
+        left: 280px;
+    }
+
+    #send-button{
+        position: absolute;
+        bottom: 10px;
+        left: 220px;
+    }
+
+#meme{
+    position:fixed;
+    bottom: 0px;
+    left:40px;
+}
+
+#status{
+    color:#e40b0b; 
+}
+/* Messages style */
+
+.message{
     width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: #000;
-    text-align: center;  
+    height: 100px;
+    margin-top:10px;
+    border-radius:10px;
+    padding: 5px 10px;
+    overflow: hidden;
 }
 
-#clear-button{
-    position:absolute;
-    left:470px;
-    top: 410px;
+.you{
+    margin-left: 60px;
+    border: 1px solid #ccc;
+    color: #84e2ab;
+}
+
+.eco{
+    margin-left: -160px;
+    background-color: #84e2ab;
+    color:white;
 }

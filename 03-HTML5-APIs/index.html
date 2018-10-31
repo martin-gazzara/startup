@@ -9,29 +9,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="header-container">
-        <h1>Chat with yourself</h1>
-    </header>
-    <section id="section-container">
-
-        <!--GUI-->
-
-        <!--History-->
-        <h3>Messages history. Status: <span id="status">Offline</span></h3>
-
-        <div id="chat">
-
-        </div>
-
+    <header id="header-container"><h1>Using a SVG element</h1></header>
+    <svg width="1000" height="600">
+        <rect id="frontface" x="300" y="300" width="100" height="100" />
+        <polygon id="upperface" points="300,300 330,270 430,270 400,300"/>
+        <polygon id="sideface" points="430,270 430,370 400,400 400,300"/>
         
-        <div id="buttons">
-            <input type="text" name="message" id="message" placeholder="Write your message...">
-            <button id="connect">Connect</button>
-            <button id="send-button">Send</button>
-        </div>
+        <circle id="circle1" cx="400" cy="100" r="50" />
+        <circle id="circle2" cx="450" cy="100" r="50" />
+        <circle id="circle3" cx="425" cy="150" r="50" />
 
-        <img id="meme" src="images/foreveralone.png" alt="You." width="200">
-        <script src="scripts/exercise3.js"></script>
-    </section>
+        <polygon id="star" points="800,200 845,350 710,260 890,260 755,350 800,200"/>
+        
+    </svg>
 </body>
 </html>

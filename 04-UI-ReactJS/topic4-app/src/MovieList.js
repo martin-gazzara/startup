@@ -1,85 +1,92 @@
 import React from 'react';
 import Movie from './Movie';
 import "./MovieList.css";
+import { createStore } from "redux"
+
+function add(name){
+    return{
+        type:"ADD_MOVIE",
+        movie:name
+    }
+}
+
+function edit(index,newInput){
+    return{
+        type:"EDIT_MOVIE",
+        index:index,
+        name:newInput
+    }
+}
+
+function remove(index){
+    return{
+        type:"REMOVE_MOVIE",
+        index:index
+    }
+}
+
+const reducer = (prevState,action) => {
+    switch (action.type){
+        case "ADD_MOVIE":
+            return {movieList:prevState.movieList.concat(action.movie)};
+        case "EDIT_MOVIE":
+            const newList = prevState.movieList;
+            newList[action.index] = action.name;
+            return {movieList:newList};
+        case "REMOVE_MOVIE":
+            return {movieList:prevState.movieList.filter( movie => movie !== prevState.movieList[action.index])};
+        default:
+            return prevState;
+    }
+}
+
+const store = createStore(reducer,{editMode:false,movieList: []});
 
 class MovieList extends React.Component{
 
     constructor(){
         super();
         this.state = {
-            newInput:"",
-            movieList: [],
-            editMode:false,
-            itemToEdit:undefined
+            movieList: []
         }
 
-        this.HandleInput = this.HandleInput.bind(this);
-        this.AddMovie = this.AddMovie.bind(this);
-        this.EditMovie = this.EditMovie.bind(this);
-        this.ApplyChanges = this.ApplyChanges.bind(this);
-        this.DeleteMovie = this.DeleteMovie.bind(this);
+        store.subscribe( () => this.setState({movieList:store.getState().movieList}))
     }
 
-    HandleInput(e){
-        this.setState({newInput:e.target.value})
-        console.log(this.state.newInput);
-    }
-
-    AddMovie(){
-        let movie = this.state.newInput;
-        if (movie !== ""){
-            let newMovieList = this.state.movieList;
-            newMovieList.push(movie);
-            this.setState({
-                newInput:"",
-                movieList:newMovieList
-            });
+  
+    addToMovieList(){
+        const input = document.getElementById("input");
+        const newMovie = input.value;
+        if (newMovie !== ""){
+            store.dispatch(add(newMovie));
+            input.value = "";
         }
     }
 
-    EditMovie(e){
-        let index = e.target.value;
-        this.setState({newInput:this.state.movieList[index],editMode:true,itemToEdit:index});
+    removeMovie(e){
+        const index = e.target.id;
+        store.dispatch(remove(index));
     }
 
-    ApplyChanges(){
-        let newValue = this.state.newInput;
-        let newMovieList = this.state.movieList;
-
-        newMovieList[this.state.itemToEdit] = newValue;
-
-        this.setState({
-            newInput:"",
-            movieList:newMovieList,
-            editMode:false,
-            itemToEdit:undefined
-        })
-    }
-
-    DeleteMovie(e){
-        let movie = this.state.movieList[e.target.value];
-        let newMovieList = this.state.movieList.filter( mov => mov != movie);
-        this.setState({
-            movieList:newMovieList
-        })
+    changeMovieData(e){
+        const index = e.target.id;
+        const newInput = prompt("Insert the new name and press OK to change it, o press cancel.");
+        if (newInput != null){
+            store.dispatch(edit(index,newInput));
+        }
     }
 
     render(){
         return (
             <div className="MovieList">
                 <h3>Insert you favourite movie:</h3>
-                <input type="text" onChange={this.HandleInput} value={this.state.newInput} placeholder="Insert movie"/>
-                <button onClick={this.state.editMode ? this.ApplyChanges : this.AddMovie}>{this.state.editMode ? "Edit" : "Add"}</button>
-                {this.state.movieList.map( (movie,i) => <Movie 
-                    Delete={this.DeleteMovie}
-                    EditMode={this.state.editMode} 
-                    EditName={this.EditMovie} 
-                    Key={i} name={movie}/>)}
+                <input id="input" type="text" placeholder="Insert movie"/>
+                <button onClick={this.addToMovieList}>Add</button>
+                {this.state.movieList.map( (movie,i) => <Movie  edit={this.changeMovieData} remove={this.removeMovie} name={movie} Key={i}/>)}
+                
             </div>
         )
     }
 }
-
-//
 
 export default MovieList;
